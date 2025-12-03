@@ -1,0 +1,250 @@
+/* --- Variáveis de Cores (Tema Futurista) --- */
+:root {
+    --bg-color: #050510;
+    --card-bg: rgba(20, 20, 35, 0.7);
+    --primary-neon: #00f3ff; /* Ciano Neon */
+    --secondary-neon: #bc13fe; /* Roxo Neon */
+    --text-color: #e0e0e0;
+    --accent-color: #ffffff;
+}
+
+/* --- Reset Básico --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Rajdhani', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+    /* Fundo com gradiente sutil */
+    background-image: radial-gradient(circle at 10% 20%, rgba(188, 19, 254, 0.1) 0%, transparent 20%),
+                      radial-gradient(circle at 90% 80%, rgba(0, 243, 255, 0.1) 0%, transparent 20%);
+}
+
+/* --- Tipografia --- */
+h1, h2, h3, .logo {
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* h2 {
+    font-family: 'Orbitron', sans-serif;
+     text-transform: uppercase;
+    font-size: 25px;
+    letter-spacing: 2px;
+} */
+
+/* --- Cabeçalho --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background: rgba(5, 5, 16, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 243, 255, 0.3);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    color: var(--primary-neon);
+    text-shadow: 0 0 10px var(--primary-neon);
+}
+
+/* --- Seção Principal (Hero) --- */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+    padding: 100px 10% 50px;
+    gap: 50px;
+}
+
+.hero-text {
+    flex: 1;
+    max-width: 600px;
+    text-align: center;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    background: linear-gradient(90deg, #fff, var(--primary-neon));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-text h2 {
+    font-size: 2rem;
+    background: linear-gradient(90deg, #fff, var(--primary-neon));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-text p {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #a0a0b0;
+}
+
+/* Área da Imagem */
+.hero-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Efeito de brilho atrás da imagem */
+.hero-image-container::before {
+    content: '';
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    background: var(--secondary-neon);
+    filter: blur(80px);
+    opacity: 0.3;
+    z-index: -1;
+}
+
+.book-cover-placeholder {
+    width: 350px;
+    height: 350px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid var(--primary-neon);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    color: var(--primary-neon);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.book-cover-placeholder:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 40px rgba(0, 243, 255, 0.4);
+}
+
+.book-cover-img {
+    width: 100%;
+    height: auto;
+    max-width: 350px;
+    border-radius: 5px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    display: block; /* Garante que a imagem apareça se usada */
+}
+
+/* --- Seção de Formulário --- */
+.cta-section {
+    background: var(--card-bg);
+    padding: 60px 20px;
+    text-align: center;
+    border-top: 1px solid rgba(188, 19, 254, 0.3);
+    border-bottom: 1px solid rgba(188, 19, 254, 0.3);
+    margin: 50px 0;
+    position: relative;
+}
+
+.cta-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.cta-section h2 {
+    color: var(--secondary-neon);
+    margin-bottom: 20px;
+    text-shadow: 0 0 5px var(--secondary-neon);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+input, textarea {
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid #333;
+    border-radius: 5px;
+    color: #fff;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus, textarea:focus {
+    border-color: var(--primary-neon);
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.2);
+}
+
+button {
+    padding: 15px;
+    background: linear-gradient(45deg, var(--secondary-neon), var(--primary-neon));
+    border: none;
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+    text-transform: uppercase;
+}
+
+button:hover {
+    filter: brightness(1.2);
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(188, 19, 254, 0.5);
+}
+
+.success-message {
+    display: none;
+    background: rgba(0, 243, 255, 0.1);
+    border: 1px solid var(--primary-neon);
+    color: var(--primary-neon);
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* --- Rodapé --- */
+footer {
+    text-align: center;
+    padding: 30px;
+    font-size: 0.9rem;
+    color: #666;
+    border-top: 1px solid #111;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 120px;
+    }
+    
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+}
